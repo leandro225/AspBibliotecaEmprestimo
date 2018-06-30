@@ -17,7 +17,7 @@ namespace WebApplicationBiblioteca.Models.DAL
         }
 
 
-        public DbSet<Cliente> Clientes { get; set; }
+        
         public DbSet<Livro> Livros { get; set; }
     }
 }

@@ -22,12 +22,8 @@ namespace WebApplicationBiblioteca.Models
         public string ISBN { get; set; }
 
         
-        public string Autor{ get; set; }
+        
 
-        [Required(ErrorMessage = "Digite a Data da Compra do Livro")]
-        [Display(Name = "Data da Compra")]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
-        public DateTime DataCompra { get; set; }
 
 
 
