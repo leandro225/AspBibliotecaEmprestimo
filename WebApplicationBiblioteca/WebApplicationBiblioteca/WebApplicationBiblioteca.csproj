@@ -148,11 +148,13 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AutorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LivroController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Autor.cs" />
     <Compile Include="Models\DAL\Contexto.cs" />
     <Compile Include="Models\Livro.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -198,6 +200,11 @@
     <Content Include="Views\Livro\Index.cshtml" />
     <Content Include="Views\Livro\Delete.cshtml" />
     <Content Include="Views\Livro\Details.cshtml" />
+    <Content Include="Views\Autor\Create.cshtml" />
+    <Content Include="Views\Autor\Delete.cshtml" />
+    <Content Include="Views\Autor\Details.cshtml" />
+    <Content Include="Views\Autor\Edit.cshtml" />
+    <Content Include="Views\Autor\Index.cshtml" />
     <Content Include="Views\Emprestimo\Create.cshtml" />
     <Content Include="Views\Emprestimo\Delete.cshtml" />
     <Content Include="Views\Emprestimo\Details.cshtml" />
