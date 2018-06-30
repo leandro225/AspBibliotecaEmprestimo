@@ -1,15 +1,15 @@
 ﻿@model WebApplicationBiblioteca.Models.Livro
+
 @{
-    ViewBag.Title = "Cadastar Novo Livro";
+    ViewBag.Title = "Novo Livro";
 }
 
-<h2>Novo Livro</h2>
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
-
+        <h4>Livro</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
@@ -20,25 +20,31 @@
             </div>
         </div>
         <div class="form-group">
-           
-            <div class="form-group">
-                @Html.LabelFor(model => model.ISBN, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.ISBN, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.ISBN, "", new { @class = "text-danger" })
-                </div>
-            </div>
-            
-        </div>
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Cadastrar" class="btn btn-default" />
+            @Html.LabelFor(model => model.ISBN, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ISBN, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ISBN, "", new { @class = "text-danger" })
             </div>
         </div>
     </div>
-}
+    <div class="form-group">
+        @Html.LabelFor(model => model.AutorId, "Autor", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+           
+            @Html.DropDownListFor(model => model.AutorId, (SelectList)ViewBag.AutorId, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.AutorId, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+         
+            <input class="btn btn-primary" type="submit" value="Cadastrar">
+            
+        </div>
+    </div>
 
+}
+   
 @section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
+    @*@Scripts.Render("~/bundles/jqueryval")*@
 }
-

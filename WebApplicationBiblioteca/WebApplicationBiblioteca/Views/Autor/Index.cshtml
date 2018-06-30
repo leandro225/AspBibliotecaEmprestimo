@@ -23,8 +23,9 @@
             </td>
             <td>
 
-                @Html.ActionLink("Detalhes", "Details", new { id = item.AutorId }) |
-                @Html.ActionLink("Excluir", "Delete", new { id = item.AutorId })
+             
+                @Html.ActionLink("Detalhes", "Details", new { id = item.AutorId }, new { @class = "btn btn-success" })
+                @Html.ActionLink("Excluir", "Delete", new { id = item.AutorId }, new { @class = "btn btn-success" })
             </td>
         </tr>
     }

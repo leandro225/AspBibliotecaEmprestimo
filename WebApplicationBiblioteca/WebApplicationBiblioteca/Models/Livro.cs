@@ -12,20 +12,15 @@ namespace WebApplicationBiblioteca.Models
     {
 
         public int LivroID { get; set; }
-
-        [Required(ErrorMessage = "Informe o Titulo")]
-        [Display(Name = "Titulo")]
+        
         public string Titulo { get; set; }
-
-        [Required(ErrorMessage = "Informe o ISBN")]
-        [Display(Name = "ISBN")]
+       
         public string ISBN { get; set; }
 
         //vindo do autor
-        [Required(ErrorMessage = "Cadastre um Autor antes de Cadastrar um Livro")]
-        [Display(Name = "Autor")]
+              
         public int AutorId { get; set; }
-
+        
         [ForeignKey("AutorId")]
         public virtual Autor Autor { get; set; }
 

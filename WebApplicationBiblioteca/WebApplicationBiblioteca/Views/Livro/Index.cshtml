@@ -3,7 +3,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Clientes Da Biblioteca</h2>
+<h2>Livros Cadastrados Na  Biblioteca</h2>
 
 
 <table class="table">
@@ -11,14 +11,13 @@
         <th>
             @Html.DisplayNameFor(model => model.Titulo)
         </th>
-        
+
         <th>
             @Html.DisplayNameFor(model => model.ISBN)
         </th>
-
-        
-
-
+        <th>
+            @Html.DisplayNameFor(model => model.Autor.Nome)
+        </th>
         <th></th>
     </tr>
     @foreach (var item in Model)
@@ -27,13 +26,17 @@
         <td>
             @Html.DisplayFor(modelItem => item.Titulo)
         </td>
-        
+
         <td>
             @Html.DisplayFor(modelItem => item.ISBN)
         </td>
-
-        
-
+        <td>
+            @Html.DisplayFor(modelItem => item.Autor.Nome)
+        </td>
     </tr>
     }
 </table>
+<p>
+
+    @Html.ActionLink("Voltar", "Create", new { id = 1 }, new { @class = "btn btn-success" })
+</p>
