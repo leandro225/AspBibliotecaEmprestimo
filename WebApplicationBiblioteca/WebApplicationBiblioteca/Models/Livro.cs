@@ -21,8 +21,14 @@ namespace WebApplicationBiblioteca.Models
         [Display(Name = "ISBN")]
         public string ISBN { get; set; }
 
-        
-        
+        //vindo do autor
+        [Required(ErrorMessage = "Cadastre um Autor antes de Cadastrar um Livro")]
+        [Display(Name = "Autor")]
+        public int AutorId { get; set; }
+
+        [ForeignKey("AutorId")]
+        public virtual Autor Autor { get; set; }
+
 
 
 

@@ -19,7 +19,6 @@ namespace WebApplicationBiblioteca.Controllers
             return View(livros);
         }
 
-        // GET
         public ActionResult Create()
         {
             return View();

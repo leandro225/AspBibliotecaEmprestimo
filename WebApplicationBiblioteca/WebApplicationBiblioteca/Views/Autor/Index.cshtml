@@ -1,7 +1,31 @@
-﻿
+﻿@model IEnumerable<WebApplicationBiblioteca.Models.Autor>
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Autores";
 }
 
-<h2>Index</h2>
+<p>
+    @Html.ActionLink("Cadastrar Novo Autor", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            Ações
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
 
+                @Html.ActionLink("Detalhes", "Details", new { id = item.AutorId }) |
+                @Html.ActionLink("Excluir", "Delete", new { id = item.AutorId })
+            </td>
+        </tr>
+    }
+</table>
