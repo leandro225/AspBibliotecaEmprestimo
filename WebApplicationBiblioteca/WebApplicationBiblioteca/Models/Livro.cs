@@ -11,14 +11,14 @@ namespace WebApplicationBiblioteca.Models
     public class Livro
     {
 
-
         public int LivroID { get; set; }
 
-
-       
+        [Required(ErrorMessage = "Informe o Titulo")]
+        [Display(Name = "Titulo")]
         public string Titulo { get; set; }
 
-        
+        [Required(ErrorMessage = "Informe o ISBN")]
+        [Display(Name = "ISBN")]
         public string ISBN { get; set; }
 
         
