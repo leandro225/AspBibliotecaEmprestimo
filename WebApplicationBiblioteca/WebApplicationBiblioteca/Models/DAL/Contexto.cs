@@ -17,7 +17,7 @@ namespace WebApplicationBiblioteca.Models.DAL
         }
 
 
-        
+        public DbSet<Emprestimo> Emprestimos { get; set; }
         public DbSet<Livro> Livros { get; set; }
         public DbSet<Autor> Autores { get; set; }
     }

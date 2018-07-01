@@ -1,7 +1,49 @@
-﻿
+﻿@model IEnumerable<WebApplicationBiblioteca.Models.Emprestimo>
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Livros Emprestados";
 }
+<p>
+    @Html.ActionLink("Cadastrar Empréstimo", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Livro.Titulo)
+        </th>
 
-<h2>Index</h2>
+     
+        <th>
+            @Html.DisplayNameFor(model => model.PessoaEmprestimo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataEmprestimo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataDevolucao)
+        </th>
+        <th>
+            Ações
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Livro.Titulo)
+            </td>
 
+           
+            <td>
+                @Html.DisplayFor(modelItem => item.PessoaEmprestimo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataEmprestimo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataDevolucao)
+            </td>
+           
+        </tr>
+    }
+</table>

@@ -11,10 +11,7 @@ namespace WebApplicationBiblioteca.Models
     public class Emprestimo
     {
         public int EmprestimoId { get; set; }
-       
-        
 
-      
         public string PessoaEmprestimo { get; set; }
 
         [Display(Name = "Data do Empréstimo")]
@@ -27,8 +24,8 @@ namespace WebApplicationBiblioteca.Models
 
 
         [Display(Name = "Livro")]
-        public int LivroId { get; set; }
-        [ForeignKey("LivroId")]
+        public int LivroID { get; set; }
+        [ForeignKey("LivroID")]
         public virtual Livro Livro { get; set; }
     }
 }
