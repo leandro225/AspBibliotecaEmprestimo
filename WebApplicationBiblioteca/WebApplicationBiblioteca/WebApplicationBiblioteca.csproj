@@ -149,6 +149,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AutorController.cs" />
+    <Compile Include="Controllers\EmprestimoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LivroController.cs" />
     <Compile Include="Global.asax.cs">
@@ -156,6 +157,7 @@
     </Compile>
     <Compile Include="Models\Autor.cs" />
     <Compile Include="Models\DAL\Contexto.cs" />
+    <Compile Include="Models\Emprestimo.cs" />
     <Compile Include="Models\Livro.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -208,8 +210,8 @@
     <Content Include="Views\Emprestimo\Delete.cshtml" />
     <Content Include="Views\Emprestimo\Details.cshtml" />
     <Content Include="Views\Emprestimo\Edit.cshtml" />
-    <Content Include="Views\Emprestimo\Index.cshtml" />
     <Content Include="Views\Livro\Edit.cshtml" />
+    <Content Include="Views\Emprestimo\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
