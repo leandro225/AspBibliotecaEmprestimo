@@ -2,6 +2,7 @@
 @{
     ViewBag.Title = "Autores";
 }
+<h2>Autores Cadastrados Na  Biblioteca</h2>
 
 <p>
     @Html.ActionLink("Cadastrar Novo Autor", "Create")
@@ -23,9 +24,10 @@
             </td>
             <td>
 
-             
-                @Html.ActionLink("Detalhes", "Details", new { id = item.AutorId }, new { @class = "btn btn-success" })
+
+
                 @Html.ActionLink("Excluir", "Delete", new { id = item.AutorId }, new { @class = "btn btn-success" })
+                @Html.ActionLink("Voltar", "Create", new { id = item.AutorId }, new { @class = "btn btn-success" })
             </td>
         </tr>
     }

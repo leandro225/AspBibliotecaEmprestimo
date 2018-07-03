@@ -5,6 +5,8 @@ using System.Data.Entity;
 using System.Web.Mvc;
 using WebApplicationBiblioteca.Models.DAL;
 using WebApplicationBiblioteca.Models;
+using System.Net;
+using System.Web;
 
 namespace WebApplicationBiblioteca.Controllers
 {
@@ -50,6 +52,36 @@ namespace WebApplicationBiblioteca.Controllers
                 return View(livro);
             }
         }
+
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Livro livro = db.Livros.Find(id);
+            if (livro == null)
+            {
+                return HttpNotFound();
+            }
+            db.Entry(livro).Reference(e => e.Autor).Load();
+
+            return View(livro);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+
+        public ActionResult DeleteConfirmed(int id)
+        {
+            Livro livro = db.Livros.Find(id);       
+            
+                db.Livros.Remove(livro);
+                db.SaveChanges();
+                  
+            return RedirectToAction("Index");
+        }
+        
 
     }
 }

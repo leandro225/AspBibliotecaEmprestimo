@@ -25,21 +25,7 @@ namespace WebApplicationBiblioteca.Controllers
             }
 
         }
-
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Autor autor = db.Autores.Find(id);
-            if (autor == null)
-            {
-                return HttpNotFound();
-            }
-            return View(autor);
-        }
-
+     
         public ActionResult Create()
         {
             return View();

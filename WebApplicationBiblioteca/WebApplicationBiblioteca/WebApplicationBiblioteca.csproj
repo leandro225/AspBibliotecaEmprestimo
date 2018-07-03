@@ -201,14 +201,11 @@
     <Content Include="Views\Livro\Create.cshtml" />
     <Content Include="Views\Livro\Index.cshtml" />
     <Content Include="Views\Livro\Delete.cshtml" />
-    <Content Include="Views\Livro\Details.cshtml" />
     <Content Include="Views\Autor\Create.cshtml" />
     <Content Include="Views\Autor\Delete.cshtml" />
-    <Content Include="Views\Autor\Details.cshtml" />
     <Content Include="Views\Autor\Index.cshtml" />
     <Content Include="Views\Emprestimo\Create.cshtml" />
     <Content Include="Views\Emprestimo\Delete.cshtml" />
-    <Content Include="Views\Emprestimo\Details.cshtml" />
     <Content Include="Views\Emprestimo\Edit.cshtml" />
     <Content Include="Views\Livro\Edit.cshtml" />
     <Content Include="Views\Emprestimo\Index.cshtml" />

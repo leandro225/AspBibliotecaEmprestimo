@@ -5,6 +5,9 @@
 
 <h2>Livros Cadastrados Na  Biblioteca</h2>
 
+<p>
+    @Html.ActionLink("Cadastrar Novo Livro", "Create")
+</p>
 
 <table class="table">
     <tr>
@@ -17,6 +20,9 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Autor.Nome)
+        </th>
+        <th>
+            Ações
         </th>
         <th></th>
     </tr>
@@ -33,10 +39,13 @@
         <td>
             @Html.DisplayFor(modelItem => item.Autor.Nome)
         </td>
+        <td>
+
+
+            @Html.ActionLink("Excluir", "Delete", new { id = item.LivroID }, new { @class = "btn btn-success" })
+            @Html.ActionLink("Voltar", "Create", new { id = item.LivroID }, new { @class = "btn btn-success" })
+
+        </td>
     </tr>
     }
 </table>
-<p>
-
-    @Html.ActionLink("Voltar", "Create", new { id = 1 }, new { @class = "btn btn-success" })
-</p>
