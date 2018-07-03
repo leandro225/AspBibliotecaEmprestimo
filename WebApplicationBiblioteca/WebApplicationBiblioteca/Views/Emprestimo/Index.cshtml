@@ -2,6 +2,8 @@
 @{
     ViewBag.Title = "Livros Emprestados";
 }
+<h2>Emprestimos Da  Biblioteca</h2>
+
 <p>
     @Html.ActionLink("Cadastrar Empréstimo", "Create")
 </p>
@@ -9,9 +11,7 @@
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Livro.Titulo)
-        </th>
-
-     
+        </th>   
         <th>
             @Html.DisplayNameFor(model => model.PessoaEmprestimo)
         </th>
@@ -22,32 +22,35 @@
             @Html.DisplayNameFor(model => model.DataDevolucao)
         </th>
         <th>
-            Ações
+            Opções
         </th>
         <th></th>
     </tr>
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Livro.Titulo)
-            </td>
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Livro.Titulo)
+        </td>
 
-           
-            <td>
-                @Html.DisplayFor(modelItem => item.PessoaEmprestimo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DataEmprestimo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DataDevolucao)
-            </td>
-           
-        </tr>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.PessoaEmprestimo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataEmprestimo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataDevolucao)
+        </td>
+        <td>
+
+            @Html.ActionLink("Excluir", "Delete", new { id = item.EmprestimoId }, new { @class = "btn btn-success" })
+            @Html.ActionLink("Voltar", "Create", new { id = item.EmprestimoId }, new { @class = "btn btn-success" })
+
+        </td>
+
+    </tr>
     }
 </table>
-<p>
 
-    @Html.ActionLink("Voltar", "Create", new { id = 1 }, new { @class = "btn btn-success" })
-</p>

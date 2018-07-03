@@ -1,7 +1,47 @@
-﻿
+﻿@model WebApplicationBiblioteca.Models.Emprestimo
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Excluir";
 }
+<h3>Deseja Excluir Este Empréstimo?</h3>
+<div>
 
-<h2>Delete</h2>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Livro.Titulo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Livro.Titulo)
+        </dd>
 
+        <dt>
+            @Html.DisplayNameFor(model => model.PessoaEmprestimo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PessoaEmprestimo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DataEmprestimo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DataEmprestimo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DataDevolucao)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DataDevolucao)
+        </dd>
+    </dl>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="alert-danger">
+            <input class="btn btn-primary" type="submit" value="Excluir">
+
+            @Html.ActionLink("Voltar", "Index", new { id = 1 }, new { @class = "btn btn-success" })
+
+        </div>
+    }
+</div>

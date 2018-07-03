@@ -81,7 +81,40 @@ namespace WebApplicationBiblioteca.Controllers
                   
             return RedirectToAction("Index");
         }
-        
+
+        public ActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Livro livro = db.Livros.Find(id);
+            if (livro == null)
+            {
+                return HttpNotFound();
+            }
+
+            ViewBag.AutorId = new SelectList(db.Autores, "AutorId", "Nome");
+            
+            return View(livro);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+
+        public ActionResult Edit([Bind(Include = "LivroID,Titulo,ISBN,AutorId")] Livro livro)
+        {
+            if (ModelState.IsValid)
+            {
+
+
+                db.Entry(livro).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+           
+            return View(livro);
+        }
 
     }
 }

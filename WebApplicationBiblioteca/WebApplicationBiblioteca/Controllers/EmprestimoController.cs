@@ -56,5 +56,33 @@ namespace WebApplicationBiblioteca.Controllers
                 return View(emprestimo);
             }
         }
+
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Emprestimo emprestimo = db.Emprestimos.Find(id);
+            if (emprestimo == null)
+            {
+                return HttpNotFound();
+            }
+            db.Entry(emprestimo).Reference(e => e.Livro).Load();
+            return View(emprestimo);
+        }
+
+        
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+
+        public ActionResult DeleteConfirmed(int id)
+        {
+            Emprestimo emprestimo = db.Emprestimos.Find(id);
+            db.Emprestimos.Remove(emprestimo);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
     }
 }

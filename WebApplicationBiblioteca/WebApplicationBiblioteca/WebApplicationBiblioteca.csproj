@@ -206,7 +206,6 @@
     <Content Include="Views\Autor\Index.cshtml" />
     <Content Include="Views\Emprestimo\Create.cshtml" />
     <Content Include="Views\Emprestimo\Delete.cshtml" />
-    <Content Include="Views\Emprestimo\Edit.cshtml" />
     <Content Include="Views\Livro\Edit.cshtml" />
     <Content Include="Views\Emprestimo\Index.cshtml" />
   </ItemGroup>

@@ -14,6 +14,7 @@ namespace WebApplicationBiblioteca.Models
 
         public string PessoaEmprestimo { get; set; }
 
+
         [Display(Name = "Data do Empréstimo")]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime DataEmprestimo { get; set; }

@@ -13,7 +13,7 @@
             @Html.DisplayNameFor(model => model.Nome)
         </th>
         <th>
-            Ações
+            Opções
         </th>
     </tr>
     @foreach (var item in Model)
@@ -27,6 +27,8 @@
 
 
                 @Html.ActionLink("Excluir", "Delete", new { id = item.AutorId }, new { @class = "btn btn-success" })
+
+               
                 @Html.ActionLink("Voltar", "Create", new { id = item.AutorId }, new { @class = "btn btn-success" })
             </td>
         </tr>

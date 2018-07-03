@@ -22,7 +22,7 @@
             @Html.DisplayNameFor(model => model.Autor.Nome)
         </th>
         <th>
-            Ações
+            Opções
         </th>
         <th></th>
     </tr>
@@ -43,6 +43,7 @@
 
 
             @Html.ActionLink("Excluir", "Delete", new { id = item.LivroID }, new { @class = "btn btn-success" })
+            @Html.ActionLink("Editar", "Edit", new { id = item.LivroID }, new { @class = "btn btn-success" })
             @Html.ActionLink("Voltar", "Create", new { id = item.LivroID }, new { @class = "btn btn-success" })
 
         </td>
