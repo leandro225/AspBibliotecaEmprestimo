@@ -41,12 +41,14 @@
         </td>
         <td>
 
-
             @Html.ActionLink("Excluir", "Delete", new { id = item.LivroID }, new { @class = "btn btn-success" })
-            @Html.ActionLink("Editar", "Edit", new { id = item.LivroID }, new { @class = "btn btn-success" })
-            @Html.ActionLink("Voltar", "Create", new { id = item.LivroID }, new { @class = "btn btn-success" })
+            @Html.ActionLink("Editar", "Edit", new { id = item.LivroID }, new { @class = "btn btn-success" })           
 
         </td>
     </tr>
     }
 </table>
+<div>
+
+    @Html.ActionLink("Voltar", "Create", new { id = 1 }, new { @class = "btn btn-success" })
+</div>
