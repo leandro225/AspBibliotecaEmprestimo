@@ -24,9 +24,5 @@ namespace WebApplicationBiblioteca.Models
         [ForeignKey("AutorId")]
         public virtual Autor Autor { get; set; }
 
-
-
-
-
     }
 }

@@ -28,5 +28,7 @@ namespace WebApplicationBiblioteca.Models
         public int LivroID { get; set; }
         [ForeignKey("LivroID")]
         public virtual Livro Livro { get; set; }
+
+
     }
 }

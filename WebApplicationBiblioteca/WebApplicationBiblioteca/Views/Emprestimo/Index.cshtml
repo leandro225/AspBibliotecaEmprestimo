@@ -2,16 +2,14 @@
 @{
     ViewBag.Title = "Livros Emprestados";
 }
-<h2>Emprestimos Da  Biblioteca</h2>
+<h2 style="color:aliceblue">Emprestimos Da  Biblioteca</h2>
 
-<p>
-    @Html.ActionLink("Cadastrar Empréstimo", "Create")
-</p>
-<table class="table">
+
+<table class="table" style="color:aliceblue">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Livro.Titulo)
-        </th>   
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.PessoaEmprestimo)
         </th>
@@ -21,7 +19,7 @@
         <th>
             @Html.DisplayNameFor(model => model.DataDevolucao)
         </th>
-        <th>
+        <th style="color:aliceblue">
             Opções
         </th>
         <th></th>
@@ -31,9 +29,7 @@
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.Livro.Titulo)
-        </td>
-
-
+        </td>       
         <td>
             @Html.DisplayFor(modelItem => item.PessoaEmprestimo)
         </td>
@@ -45,7 +41,7 @@
         </td>
         <td>
 
-            @Html.ActionLink("Excluir", "Delete", new { id = item.EmprestimoId }, new { @class = "btn btn-success" })       
+            @Html.ActionLink("Excluir", "Delete", new { id = item.EmprestimoId }, new { @class = "btn btn-success" })
 
         </td>
 
